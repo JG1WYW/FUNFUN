@@ -1,0 +1,11 @@
+
+DEFINITION MODULE Variable;
+
+PROCEDURE Assignment( r: REAL; str: ARRAY OF CHAR );
+PROCEDURE Reference( VAR str: ARRAY OF CHAR ): REAL;
+PROCEDURE ListVars;
+PROCEDURE ClearVariables;
+
+END Variable.
+
+

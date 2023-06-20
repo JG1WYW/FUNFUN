@@ -1,0 +1,8 @@
+
+DEFINITION MODULE Ascii;
+
+PROCEDURE AsciiLow;
+PROCEDURE AsciiHigh;
+
+END Ascii.
+

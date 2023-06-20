@@ -1,0 +1,19 @@
+
+DEFINITION MODULE Error;
+
+FROM SYSTEM IMPORT ADDRESS;
+FROM MSDOS IMPORT Registers;
+
+VAR
+	Entry: Registers;
+	ErrorStrategy: RECORD				(* エラートラップ・ストラテジ *)
+		Operation: CARDINAL;
+		Proc: PROC;
+		CalledFrom: ADDRESS;
+		ErrorCode: CARDINAL;
+	END;
+
+PROCEDURE Error;
+
+END Error.
+

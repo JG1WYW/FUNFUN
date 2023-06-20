@@ -1,0 +1,13 @@
+
+DEFINITION MODULE Hook;
+
+FROM MSDOS IMPORT Registers;
+
+VAR
+	TriggerFlag: BOOLEAN;		(* COPY キーが押されたフラグ *)
+
+PROCEDURE CopyHook( VAR regs: Registers; No: CARDINAL );
+PROCEDURE BGHook;
+
+END Hook.
+

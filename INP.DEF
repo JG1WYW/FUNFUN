@@ -1,0 +1,8 @@
+
+DEFINITION MODULE Inp;
+
+PROCEDURE LineEdit( VAR str: ARRAY OF CHAR ): BOOLEAN;
+
+END Inp.
+
+

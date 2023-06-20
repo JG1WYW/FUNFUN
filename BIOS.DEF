@@ -1,0 +1,23 @@
+
+DEFINITION MODULE BIOS;
+
+TYPE
+	PV = ( up, down );
+
+PROCEDURE PushScreen;
+PROCEDURE PopScreen;
+PROCEDURE ChangeScreen( pv: PV );
+
+PROCEDURE GetChar(): CHAR;
+PROCEDURE Write( ch: CHAR );
+PROCEDURE WriteString( str: ARRAY OF CHAR );
+PROCEDURE WriteLn;
+PROCEDURE WSL( str: ARRAY OF CHAR );
+PROCEDURE WriteStringPos( VAR str: ARRAY OF CHAR; p: CARDINAL );
+PROCEDURE GoLeft( i: CARDINAL );
+PROCEDURE GoRight( i: CARDINAL );
+PROCEDURE KillRight;
+
+END BIOS.
+
+

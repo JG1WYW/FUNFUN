@@ -1,0 +1,33 @@
+
+DEFINITION MODULE LexDen;
+
+TYPE
+	CLASS = ( Ident, Reserved, Operator, Int, Float, LexEnd, Arbitary );
+	ATTRIBUTE = ( Relop, Addop, Mulop, NonAttr );
+	RESERVED = ( Abs, Acos, Asin, Atan, Bin, Cn, Cos, Cosh, Dms, Exp, Hex, Ln, Log, Sin, Sinh, Sqrt, Tan, Tanh );
+	OPERATOR = ( Plus, Minus, Asterisk, Slash, Equal, LeftSparen, RightSparen, Ampersand, Bar, Hat );
+	STRING = ARRAY [0..72] OF CHAR;
+	TOKEN = RECORD
+		Class: CLASS;
+		Attribute: ATTRIBUTE;
+		String: STRING;
+		CASE :CLASS OF
+			Reserved: Rvalue: RESERVED
+		|	Operator: Ovalue: OPERATOR
+		|	Int:     Integer: LONGCARD
+		END
+	END;
+
+VAR
+	AbortFlag: BOOLEAN;
+	Token: TOKEN;
+	Lptr: CARDINAL;
+	LexBuffer: ARRAY [0..72] OF CHAR;
+
+PROCEDURE Lex;
+PROCEDURE ClearBuf;
+PROCEDURE WriteToken;
+PROCEDURE FatalError;
+
+END LexDen.
+

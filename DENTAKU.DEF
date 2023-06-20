@@ -1,0 +1,7 @@
+
+DEFINITION MODULE Dentaku;
+
+PROCEDURE Dentaku;
+
+END Dentaku.
+

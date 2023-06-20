@@ -1,0 +1,27 @@
+
+(*	コマンドライン・パラメータ取得モデュール
+ *
+ *	"% foo ab cd ef" というコマンドに対し
+ *		Argc = 3
+ *		Argv[ 1 ]^ = 'ab'
+ *		Argv[ 2 ]^ = 'cd'
+ *		Argv[ 3 ]^ = 'ef'
+ *	を得る.
+ *
+ *)
+
+DEFINITION MODULE Arg;
+
+CONST
+	ARGS = 31;		(* 最大パラメータ数 *)
+
+TYPE
+	STRING = ARRAY [0..127] OF CHAR;
+
+VAR
+	PSCh: CHAR;		(* パラメータ分離文字 *)
+	Argc: INTEGER;	(* パラメータ数 *)
+	Argv: ARRAY [0..ARGS] OF POINTER TO STRING;
+
+END Arg.
+
